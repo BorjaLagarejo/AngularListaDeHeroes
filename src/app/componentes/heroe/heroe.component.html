@@ -1,0 +1,27 @@
+<div class="row animated fadeIn fast" >
+  <div class="container_img">
+    <img class="banner" src="https://t4.kn3.net/taringa/4/6/A/5/6/B/Nachone/877.jpg" />
+  </div>
+</div>
+<div class="row no-gutters">
+  <div class="col-12 col-md-4">
+    <div class="card" style="margin-top: -2em; margin-left: 1em; margin-right: 1em">
+      <img class="card-img-top" src="{{ heroe.img }}" alt="Card image cap">
+      <p class="text-center pt-3">{{heroe.aparicion | date:'y'}}</p>
+    </div>
+  </div>
+  <div class="col-12 col-sm-12 col-md-8">
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-sm">
+                <h3>{{ heroe.nombre }}</h3>
+            </div>
+            <div class="col-sm">
+                <h6 class="text-right"> {{heroe.casa}}</h6>
+            </div>
+          </div>
+      <hr>
+      <p> {{ heroe.bio }}</p>
+    </div>
+  </div>
+</div>

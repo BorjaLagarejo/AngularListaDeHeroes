@@ -1,0 +1,39 @@
+<div class="animated fadeIn fast">
+  <h1 *ngIf="!buscando"> Héroes
+    <small>Marvel y DC</small>
+  </h1>
+  <h1 *ngIf="buscando"> Buscando :
+      <small>{{buscando}}</small>
+    </h1>
+  <hr>
+  <div class="row" *ngIf="heroes.length == 0">
+    <div class="col-md-12">
+      <div class="alert alert-info" role="alert">
+        Sin resultados.
+      </div>
+    </div>
+  </div>
+
+  <div class="card-columns animated fadeIn">
+    <div *ngFor="let heroe of heroes;" class="card shadow bg-white rounded">
+      <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
+      <div class="card-body">
+        <h5 class="card-title">{{ heroe.nombre }}</h5>
+        <p class="card-text">{{ heroe.bio }}</p>
+        <p class="card-text">
+          <small class="text-muted">{{ heroe.aparicion }}</small>
+        </p>
+
+        <!-- <button (click)="verHeroe(i)" class="btn btn-outline-primary btn-block">
+        Mostrar / Ocultar
+      </button> -->
+
+        <a [routerLink]="[ '/heroe', heroe.idx ]" class="">
+          <button class="btn btn-outline-primary btn-block">
+            Mostrar / ocultar
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
